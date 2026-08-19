@@ -118,7 +118,7 @@
       {
         "path": "ADAPTER-PROMPT.md",
         "change_type": "changed",
-        "note": "Step 4 gains two explicit rules: substitute the {{USER_NAME}} token and nothing else, and never edit source code during personalization."
+        "note": "Step 4 gains two explicit rules: substitute the Edoardo token and nothing else, and never edit source code during personalization."
       },
       {
         "path": "scripts/check-no-personal-data.py",

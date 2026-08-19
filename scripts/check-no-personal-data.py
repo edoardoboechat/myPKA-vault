@@ -5,7 +5,7 @@ WHY THIS EXISTS
     v1.8.2 swept the author's first name out of the scaffold and the job was
     called done. v3.0.0 shipped the Cockpit, which reintroduced ~100 literal
     mentions plus a real person's health context, and nothing noticed for 48
-    days because the only check that existed looked for `{{USER_NAME}}` — a
+    days because the only check that existed looked for `Edoardo` — a
     token that was, correctly, absent the whole time. A guard whose passing
     state is reachable without the thing being true is worse than no guard.
 
