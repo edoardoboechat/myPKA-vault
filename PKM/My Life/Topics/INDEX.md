@@ -15,6 +15,7 @@ Topics are the signal layer, so keep them shallow: roughly **three levels deep**
 ## Active files
 
 - [[ai-tooling]] — seeded course sample. Note the "Current pulse" section — that energy is what a Topic file should carry.
+- [[android-security]] — Android application security, vulnerabilities, and testing methodologies
 
 ## Naming
 

@@ -12,6 +12,7 @@ Example: the Goal *"lose 20 kg"* can be carried by a Project (an 8-week program 
 
 ## Active files
 
+- [[android-security-agent]] — Android Security Agent: AI-powered security analysis and APK vulnerability scanning
 - [[side-project-mvp]] — seeded course sample. The canonical shape every Project file follows.
 
 ## Naming

@@ -10,6 +10,7 @@ Routing table for the six core specialists shipped with the scaffold. Larry read
 | Penn | Journal Writer | [[Team/Penn - Journal Writer/AGENTS]] | User shares thoughts, screenshots, voice notes, photos, or anything that needs to land in the Journal or PKM. See [[WS-001-daily-journaling]]. |
 | Mack | Automation Specialist | [[Team/Mack - Automation Specialist/AGENTS]] | API integrations, MCP servers, webhooks, OAuth flows, automation scripts. Connection layer for external imports — fetches the bytes, hands off to Silas. Wires up external image generators when local image-gen isn't available. |
 | Silas | Database Architect | [[Team/Silas - Database Architect/AGENTS]] | External knowledge imports — primary executor of [[WS-002-import-external-knowledge-base]]. Default owner of [[SOP-002-convert-mypka-to-sqlite]]. Frontmatter integrity audits, schema drift, GL-002 compliance. |
+| Vigil | Work Guardian | [[Team/Vigil - Work Guardian/AGENTS]] | Work session guard. Before work (pre-work gate: domain, skills, memory, threads), during work (SSOT watch), after work (session-log, memory check, open threads). Activates on "let's start", "wrap up", "where does this go". Hired 2026-08-29 via Hermes delegation. |
 
 ## Bootstrap rule
 

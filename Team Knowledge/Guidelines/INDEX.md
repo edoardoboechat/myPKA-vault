@@ -12,8 +12,11 @@ Filename pattern: `GL-NNN-<title>.md`.
 | GL-002 | [[GL-002-frontmatter-conventions]] | YAML frontmatter field schemas for all 8 entity types, typing rules, foreign-key convention. Aligns with [[SOP-002-convert-mypka-to-sqlite]]. |
 | GL-004 | [[GL-004-task-resource-linking]] | One-way Task → Resource linking rule, seven-array task frontmatter contract, `linked_deliverables` slug format, archive-on-close cascade. Read by [[SOP-create-task]], [[SOP-claim-task]], [[SOP-close-task]]. |
 | GL-005 | [[GL-005-llm-agnostic-portable-core]] | The portable-core boundary: harness-agnostic core (`PKM/`, `Team Knowledge/`, the body of every `Team/*/AGENTS.md`) vs the per-harness adapter layer (`.claude/`, future `.codex/`, `.cursor/`). No harness names, host tool names, slash-command-only triggers, or hardcoded models in the core. Enforced by the `agnosticism-audit` in `validation-script.sh`. <!-- agnosticism-audit:allow --> |
+| GL-006 | [[GL-006-command-boundaries-git-and-gh]] | Domain split between `git` (local version control) and `gh` (GitHub platform management). Documents that `gh push` does not exist and is a common mistake. |
+| GL-007 | [[GL-007-hermes-services-map]] | Mapa detalhado do estado actual dos serviços do Hermes Agent — PM2, Gateway, WhatsApp Bridge, fluxos de mensagens, alerta de persistência. |
+| GL-008 | [[GL-008-hermes-troubleshooting]] | Guia de diagnóstico read-only para cada serviço — comandos de verificação, locais de logs, falhas comuns e health-check one-liner. |
 
-*Reserved:* GL-003, the design-system Guideline (the visual identity SSOT). It ships with the Designer Pack, available with the myICOR membership on the Expansion Packs page; installing the pack adds `GL-003-design-system.md` to this set. Next free Guideline slot for locally-authored rules is GL-006.
+*Reserved:* GL-003, the design-system Guideline (the visual identity SSOT). It ships with the Designer Pack, available with the myICOR membership on the Expansion Packs page; installing the pack adds `GL-003-design-system.md` to this set. Next free Guideline slot for locally-authored rules is GL-009.
 
 ## When to write a new Guideline
 
