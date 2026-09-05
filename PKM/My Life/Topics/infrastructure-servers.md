@@ -67,6 +67,42 @@ O ecossistema de desenvolvimento e produção do coingame distribui-se por **doi
 - `.git/` — repositório git do workspace
 - `.gitignore`
 - `coingame/` — código do coingame (clonado do repositório)
+  - `.env`, `.env.example`
+  - `.github/` (workflows CI/CD)
+  - `.idea/` (IntelliJ IDE)
+  - `backend-spring/` (Spring Boot backend)
+  - `copilot/` (Copilot integration)
+  - `docker-compose-dev.yaml`, `docker-compose.yml`
+  - `docs/`, `frontend-react-pwa/`, `infra/`
+  - `README.md`, `.gitignore`
+
+**Estrutura verificada (2026-09-04):**
+```
+~/workspace (symlink → /root/workspace)
+├── .git/
+├── .gitignore
+└── coingame/
+    ├── .env
+    ├── .env.example
+    ├── .github/
+    ├── .gitignore
+    ├── .idea/
+    ├── README.md
+    ├── backend-spring/
+    ├── copilot/
+    ├── docker-compose-dev.yaml
+    ├── docker-compose.yml
+    ├── docs/
+    ├── frontend-react-pwa/
+    └── infra/
+```
+
+**Comando de verificação:**
+```bash
+ssh metris "ls -la ~/workspace"
+ssh metris "ls -la /root/workspace"
+ssh metris "ls -la /root/workspace/coingame"
+```
 
 **Serviços Docker activos:**
 

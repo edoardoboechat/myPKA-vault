@@ -129,6 +129,28 @@ Host metris
 | **Role** | Production / Staging |
 | **Workspace** | `~/workspace` → symlink to `/root/workspace` |
 
+**Workspace structure (verified 2026-09-04):**
+
+```
+~/workspace (symlink) → /root/workspace
+├── .git/                    # Git repository
+├── .gitignore
+└── coingame/                # Coingame project root
+    ├── .env                 # Environment variables (credentials)
+    ├── .env.example         # Template
+    ├── .github/             # GitHub workflows
+    ├── .gitignore
+    ├── .idea/               # IntelliJ IDE files
+    ├── README.md
+    ├── backend-spring/      # Spring Boot backend
+    ├── copilot/             # Copilot integration
+    ├── docker-compose-dev.yaml
+    ├── docker-compose.yml   # Production Docker compose
+    ├── docs/                # Documentation
+    ├── frontend-react-pwa/  # React PWA frontend
+    └── infra/               # Infrastructure configs
+```
+
 **Active Docker containers:**
 - `aether_backend` — `ghcr.io/edoardoboechat/coingame:latest`
 - `aether_adminer` (8080) — `adminer:latest`
@@ -158,11 +180,31 @@ Host metris
 
 ### Metris (`~/workspace` → `/root/workspace`)
 ```
-~/workspace/
+~/workspace/  (symlink → /root/workspace)
 ├── .git/                       # Git repository
 ├── .gitignore
 ├── coingame/                   # Coingame code (cloned from repo)
+│   ├── .env
+│   ├── .env.example
+│   ├── .github/
+│   ├── .gitignore
+│   ├── .idea/
+│   ├── README.md
+│   ├── backend-spring/
+│   ├── copilot/
+│   ├── docker-compose-dev.yaml
+│   ├── docker-compose.yml
+│   ├── docs/
+│   ├── frontend-react-pwa/
+│   └── infra/
 └── (other project files)
+```
+
+**Verification command:**
+```bash
+ssh metris "ls -la ~/workspace"
+ssh metris "ls -la /root/workspace"
+ssh metris "ls -la /root/workspace/coingame"
 ```
 
 ---
