@@ -101,9 +101,25 @@ Host metris
 | **User** | `openclaw` |
 | **SSH Key** | `~/.ssh/id_ed25519` |
 | **Role** | Development + identity infrastructure |
-| **Workspace** | `~/workspace/` |
-| **Backend port** | 8443 (SSL) |
-| **Spring profile** | `local` → `100.122.21.51:8443` |
+| **Workspace** | `~/workspace/` (regular directory, unlike Metris's symlink) |
+
+**Workspace structure (verified 2026-09-04):**
+
+```
+~/workspace/  (regular directory in /home/openclaw/)
+├── docker-compose_infra.yml    # Docker compose for infra stack
+├── .env                        # Environment variables (credentials)
+└── infra/                      # Infrastructure configs
+    ├── certbot/                # Certbot configs/certs
+    ├── certs/                  # SSL certificates
+    ├── keycloak-realm.json     # Keycloak initial realm export
+    ├── nginx.conf              # Nginx reverse proxy config
+    └── postgres-init/          # Postgres initialization scripts
+```
+
+**Other home files in Terra (`/home/openclaw/`):**
+- `keycloak_data/` — Persistent volume data for Keycloak
+- `.ssh/`, `.cache/`, `.local/`, etc.
 
 **Active Docker containers:**
 - `aether_keycloak` (8080, 8443) — `quay.io/keycloak/keycloak:22.0.1`
@@ -112,11 +128,12 @@ Host metris
 - `aether_rabbitmq` (5672, 15672) — `rabbitmq:3-management`
 - `aether_redis` (6379) — `redis:alpine`
 
-**Keycloak realm:** `aether-quest`
-**Users:** `admin`, `pilot01`, `hunterX` (password `Hitachi$20261`)
-**Shared credentials:** `changeit` (Postgres, RabbitMQ, Keycloak Admin)
-
-**System services:** Docker, Tailscale, SSH, cron, systemd-networkd, rsyslog, ModemManager, unattended-upgrades, udisks2
+**Verification command:**
+```bash
+ssh terra "ls -la"
+ssh terra "ls -la ~/workspace"
+ssh terra "ls -la ~/workspace/infra"
+```
 
 ### Metris
 
@@ -171,11 +188,15 @@ Host metris
 
 ### Terra (`~/workspace/`)
 ```
-~/workspace/
-├── docker-compose_infra.yml    # Docker compose for infra
+~/workspace/  (regular directory in /home/openclaw/)
+├── docker-compose_infra.yml    # Docker compose for infra stack
 ├── .env                        # Environment variables (credentials)
-├── infra/                      # Infrastructure subdirectories (5)
-└── coingame/                   # (if present) coingame code
+└── infra/                      # Infrastructure configs
+    ├── certbot/                # Certbot configs/certs
+    ├── certs/                  # SSL certificates
+    ├── keycloak-realm.json     # Keycloak initial realm export
+    ├── nginx.conf              # Nginx reverse proxy config
+    └── postgres-init/          # Postgres initialization scripts
 ```
 
 ### Metris (`~/workspace` → `/root/workspace`)
