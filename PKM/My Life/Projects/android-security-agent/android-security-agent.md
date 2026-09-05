@@ -239,5 +239,6 @@ android-security-agent/
 - [[rest-api-credentials]] — API credentials & connection config
 - [[system-architecture]] — Complete system architecture
 - [[GL-009-infrastructure-servers]] — Server infrastructure (Metris/Terra)
+- Session log: [[2026-09-05-21-00_android-security-agent-ui-refresh]]
 - Session log: [[2026-09-05-14-40_hermes_android-security-agent-url-persist-fix]]
 - Session log: [[2026-08-30-17-00_hermes_android-security-agent-full-implementation]]
