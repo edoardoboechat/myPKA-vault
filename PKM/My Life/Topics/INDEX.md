@@ -16,6 +16,7 @@ Topics are the signal layer, so keep them shallow: roughly **three levels deep**
 
 - [[ai-tooling]] — seeded course sample. Note the "Current pulse" section — that energy is what a Topic file should carry.
 - [[android-security]] — Android application security, vulnerabilities, and testing methodologies
+- [[infrastructure-servers]] — Server access patterns for Terra (dev) and Metris (prod/staging)
 
 ## Naming
 

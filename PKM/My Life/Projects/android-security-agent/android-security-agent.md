@@ -13,9 +13,12 @@ linked_sops:
   - SOP-android-security-agent-setup
 linked_session_logs:
   - 2026-08-30-17-00_hermes_android-security-agent-full-implementation
+  - 2026-09-05-14-40_hermes_android-security-agent-url-persist-fix
 linked_people: []
 linked_deliverables:
   - integration-architecture
+  - url: https://github.com/edoardoboechat/android-security-agent/commit/9853695
+    description: "fix: persist endpoint URL onPause (auto-save on app exit)"
   - data-layer
   - rest-api-credentials
   - system-architecture
@@ -222,7 +225,7 @@ android-security-agent/
 
 - **Repo:** `edoardoboechat/android-security-agent` (private)
 - **Branch:** main
-- **Latest Commit:** 83aa459
+- **Latest Commit:** 9853695
 
 ## Cross-links
 
@@ -235,4 +238,6 @@ android-security-agent/
 - [[data-layer]] — Data layer specs, Room DB & Retrofit models
 - [[rest-api-credentials]] — API credentials & connection config
 - [[system-architecture]] — Complete system architecture
+- [[GL-009-infrastructure-servers]] — Server infrastructure (Metris/Terra)
+- Session log: [[2026-09-05-14-40_hermes_android-security-agent-url-persist-fix]]
 - Session log: [[2026-08-30-17-00_hermes_android-security-agent-full-implementation]]
