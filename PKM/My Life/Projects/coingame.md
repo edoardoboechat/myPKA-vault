@@ -115,6 +115,7 @@ O coingame segue rigorosamente a metodologia myPKA integrada com o Hermes Agent:
 ### Produção (Metris)
 - **URL produção:** `https://metris.com.br` (via Nginx + SSL)
 - **Backend produção:** `ghcr.io/edoardoboechat/coingame:latest` (Docker container)
+- **Keycloak (Auth):** Corre via Docker (`quay.io/keycloak/keycloak:22.0.1`) em `keycloak.moneyback.com.br`. Realm `aether-quest` importado via `./infra/keycloak-realm.json` com utilizadores seed (`admin`, `pilot01`, `hunterX` com passe `Hitachi$20261`). Configurado com `KC_PROXY=edge` e HTTPS estricto.
 - **Docker registry:** GitHub Container Registry (ghcr.io)
 
 ## Cross-links
