@@ -28,9 +28,22 @@ Este documento regista a arquitetura de rede e os componentes físicos/lógicos 
    - **Hermes Agent:** Corre como um serviço gerido pelo **PM2**. Recebe a API request, valida o campo restrito `source: "ag-sec-app"`, aplica a persona de segurança e encaminha para o motor de IA.
    - **Ollama:** Corre nativamente como um serviço do sistema no mesmo servidor `ubuntuollama`, executando a inferência do modelo.
 
-## Componentes e Responsabilidades
+## Arquitetura de Duas Gateways no Servidor UbuntuOllama
 
-| Componente | Localização / Servidor | Tecnologia | Função Principal |
+Existem atualmente **duas Gateways** distintas a correr no servidor `ubuntuollama` como serviços `systemd`:
+
+1. **Gateway Default (Hermes / WhatsApp / Dashboard):**
+   - **Porta:** `8642`
+   - **Função:** Atende a interface de chat principal (UI/dashboard) e a bridge do WhatsApp.
+   
+2. **Gateway Dedicada do Android Security Agent:**
+   - **Porta:** `8643`
+   - **Perfil Hermes:** `android-security-agent` (`~/.hermes/profiles/android-security-agent/.env`)
+   - **Função:** Atende exclusivamente os pedidos vindos da aplicação Android Security Agent.
+   - **Autenticação:** `Bearer hermes-dev-key-2026` (`API_SERVER_KEY`)
+   - **Modelo:** `fallback-pipeline` via LiteLLM Proxy (`http://127.0.0.1:4000/v1`)
+
+## Componentes e Responsabilidades
 | :--- | :--- | :--- | :--- |
 | **App Client** | Telemóvel Android | Kotlin / Retrofit | Interceta SMS/Notificações e envia payload formatado via HTTPS. |
 | **Reverse Proxy** | Servidor Metris | Nginx (Docker Compose) | Terminação SSL/TLS e encaminhamento de portas. |
