@@ -19,7 +19,7 @@ linked_topics: [hermes-agent, troubleshooting, diagnostics, logs, infrastructure
 |---------|-------------------|---------|
 | API não responde (8642) | Hermes Gateway vivo? | `ss -tlnp \| grep 8642` |
 | WhatsApp não envia/recebe | Bridge vivo? | `ps aux \| grep bridge.js` |
-| LLM não responde | LiteLLM vivo? | `pm2 logs litellm-proxy` |
+| LLM não responde | LiteLLM vivo? | `pm2 logs litellm-next` |
 | Dashboard não abre | hermes-dashboard vivo? | `pm2 logs hermes-dashboard` |
 | Tudo caiu após reboot | Persistência? | Ver secção "Alerta de Persistência" em [[GL-007-hermes-services-map]] |
 

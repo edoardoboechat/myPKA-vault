@@ -20,7 +20,7 @@
 | Serviço | Tipo | PID | Porta | Uptime | Auto-arranque |
 |---------|------|-----|-------|--------|---------------|
 | hermes-dashboard | PM2 | 688894 | 9119 | 24h | ✅ via PM2 |
-| litellm-proxy | PM2 | 703050 | 4000 | 10h | ✅ via PM2 |
+| litellm-next | PM2 | 703050 | 4000 | 10h | ✅ via PM2 |
 | hermes-gateway | Python (manual) | 647557 | 8642 | — | ❌ Manual |
 | WhatsApp Bridge | Node.js (subprocess) | 647571 | 3000 | — | ✅ (via Gateway) |
 
@@ -204,7 +204,7 @@ WhatsApp User
 | Serviço | Persiste após reinício? | Motivo |
 |---------|------------------------|--------|
 | hermes-dashboard | ✅ SIM | PM2 restart policy |
-| litellm-proxy | ✅ SIM | PM2 restart policy |
+| litellm-next | ✅ SIM | PM2 restart policy |
 | hermes-gateway | ❌ NÃO | Service inactive em systemd |
 | WhatsApp Bridge | ❌ NÃO | Depende do Hermes Gateway |
 
